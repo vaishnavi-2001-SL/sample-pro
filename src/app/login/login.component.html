@@ -1,0 +1,149 @@
+<div class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col sec">
+            <div class="card">
+                <h2 class="text-center">REGISTER</h2>
+                
+                <form [formGroup]="ng" >
+                    <div class="mb-3">
+
+                        <label for="name" class="text-uppercase">Username</label>
+                        <input type="text" style="font-size: medium;" placeholder="Enter Your Name" formControlName="name" class="form-control">
+                        <span class="text-danger" *ngIf="ng.controls['name'].errors && ng.controls['name'].touched">
+                        <br>Please enter name
+                        </span>
+                    </div>
+                    <div class="mb-3">                         
+
+                         <label for="email" class="text-uppercase">Email</label>
+                         <input formControlName="email" style="font-size: medium;" type="email"  name="email"  placeholder="email" class="form-control">
+                         <span class="text-danger" *ngIf="ng.controls['email'].errors && ng.controls['email'].touched">
+                             <br>Invalid Email Address
+                         </span>
+                         
+                    </div>
+                    <div class="mb-3">
+
+                         <label for="date" class="text-uppercase">dob</label>
+                         <input formControlName="date" style="font-size: medium;"type="date" class="form-control" name="date" id="date" >
+                         <span class="text-danger" *ngIf="ng.controls['date'].errors && ng.controls['date'].touched"><br> DOB is required</span>
+                         </div>
+
+                         <div class="mb-3">
+
+                         <label for="gen">GENDER</label>
+                         <select formControlName="gen" style="font-size: medium;" id="gen" name="gen" class="form-control" >
+                             <option hidden value="" disabled selected>Select gender</option>
+                             <option>Male</option>
+                             <option>Female</option>
+                             <option>Others</option>
+                         </select>
+                         </div>
+
+                         <div class="mb-3">
+                        <label for="mobile" class="text-uppercase">MobileNo</label>
+                        <input formControlName="mobile" style="font-size: medium;"  placeholder="mobile" type="text" name="mobile" class="form-control">
+                        <span class="text-danger" *ngIf="ng.controls['mobile'].errors && ng.controls['mobile'].touched"><br> Please enter 10 digit number </span>
+                        <!-- <span class="text-danger" *ngIf="ng.controls['mobile'].errors"><br> Invalid mobile number </span>
+                        <span class="text-danger" *ngIf="ng.controls['mobile'].touched"><br>Please enter mobile number"</span> -->
+                        </div>
+
+                        <div class="mb-3">                       
+
+                        <label for="state">STATE</label>
+                        <select formControlName="state" style="font-size: medium;"id="state" name="state"  class="form-control">
+                            <option hidden value="" disabled selected>Select state</option>
+                            
+                            <option>Tamil Nadu</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                        </select>
+                        </div>
+
+
+                        <div class="mb-3">
+                        <label for="dist">DISTRICT</label>
+                        <select formControlName="dist"  style="font-size: medium;" id="dist" name="dist" class="form-control" >
+                            <option hidden value="" disabled selected>Select district</option>
+                            <option>Tirunelveli</option>
+                            <option>Kanyakumari</option>
+                            <option>Thoothukudi</option>
+                        </select>
+
+                        </div>
+
+                        <div class="mb-3">             
+
+                        
+                        <label for="password" class="text-uppercase">Password</label>
+                        <input type="password" style="font-size: medium;" placeholder="Password" formControlName="password" class="form-control">
+                        <span class="text-danger" *ngIf="ng.controls['password'].errors && ng.controls['password'].touched">
+                            <br>Atleast 6 character Password is Required
+                        </span>
+                        </div>
+
+                        <div class="mb-3">
+                        <label for="address" >ADDRESS</label>
+                        <textarea formControlName="address" id="address" style="font-size: medium;" placeholder="address" type="text" class="form-control"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="Language"  class="text-uppercase">Language</label>
+                          
+                            <!-- <div class="drop-container">
+                                <form [formGroup]="multi"> -->
+                                  
+                                  <ng-multiselect-dropdown  formControlName="Language"
+                                  
+                                [placeholder]="'Language'"
+                                [settings]="dropdownSettings"
+                                [data]="dropdownList"
+                                (onSelect)="onItemSelect($event)">
+                                <!-- <label style="color: rgb(237, 243, 245);"></label> -->
+                                </ng-multiselect-dropdown>
+                                <span class="text-danger" *ngIf="ng.controls['Language'].errors && ng.controls['Language'].touched">
+                                  <br>Please select language 
+                              </span>
+                                <!-- </form> -->
+                                <!-- </div> -->
+                        
+                        </div>
+
+                       
+                        
+                        
+                    
+                   <button type="submit" class="btn btn-success btn-lg"  (click)="login()" >REGISTER</button><br>
+                   <br>
+                   <!-- <div> <button (click)="onOpenDialogClick()">Open</button></div> -->
+                   <button type="submit" class="btn btn-danger btn-lg" routerLink="" >CANCEL</button>
+                  
+                </form>
+                </div>
+                
+                
+               
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1"  [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-sm" >
+      <div class="modal-content">
+        <!-- <div class="modal-header">
+          <h4 class="modal-title">Login Form</h4>
+        </div> -->
+        <div class="modal-body">
+          <p>Registered Successfully!.........</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" routerLink="">Ok</button>
+          <button type="button" class="btn btn-danger"  (click)="closepop()" routerLink="/login">Cancel</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+

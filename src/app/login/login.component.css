@@ -1,0 +1,22 @@
+.card {
+    background-color: rgb(76, 166, 201);
+    /* outline-style: solid;
+    outline-color: coral;
+   */
+   border: 10px solid black;
+   width :500px;
+   padding: 40px;
+   position: absolute;
+   top :65%;
+   left:50%;
+   font-size: medium;
+   transform: translate(-50%,-50%);
+}
+
+/* .span.dropdown.btn {
+    background-color: white;
+}
+
+.multiselect-dropdown {
+    background-color: white;
+} */

@@ -1,0 +1,53 @@
+<div class="signup">
+    <div class="container">
+        <div class="row">
+            <div class="col sec">
+                <div class="card">
+                <h2 class="text-center">LOGIN</h2>
+                <form [formGroup]=" fg" >
+                    
+                    
+                        <label for="uemail" class="text-uppercase">EMAIL</label>
+                        <input type="email" placeholder="Email Address" style="font-size: medium;" name="uemail" id="uemail" formControlName="uemail" class="form-control mb-3">
+                        <span class="text-danger" *ngIf="fg.controls['uemail'].errors && fg.controls['uemail'].touched"><br>Please enter email address</span>
+                            
+                        
+                        <br>
+                        <br>
+
+
+                        <label for="upassword" class="text-uppercase">Password</label>
+                        <input type="password" placeholder="Password" style="font-size: medium;" name="upassword" id="upass" formControlName="upassword" class="form-control mb-2">
+                        <span class="text-danger" *ngIf="fg.controls['upassword'].errors && fg.controls['upassword'].touched"><br>Please enter password</span>
+                            <!-- <!-- <small *ngIf="pwd.errors?.pattern" class="text-danger">Please provide valid password</small> -- -->
+                        
+                         <br>
+                         <br>
+                    
+                   <button type="submit"  class="btn btn-danger btn-lg" (click)="signup()"> Signup</button>
+                
+                </form>
+        
+               <h2> <a routerLink="/login"> New user? Create a account!</a></h2>             
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1"  [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-sm" >
+      <div class="modal-content">
+        <!-- <div class="modal-header">
+          <h4 class="modal-title">Login Form</h4>
+        </div> -->
+        <div class="modal-body">
+          <p>LoggedIn  Successfully!.........</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" routerLink="/dashboard">Ok</button>
+          <button type="button" class="btn btn-danger"  (click)="closepop()" routerLink="/">Cancel</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
